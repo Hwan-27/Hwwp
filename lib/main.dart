@@ -39,17 +39,74 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(02, 02, 02, 1),
-          actions: [
+            title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 50,
+              height: 50,
+            ),
             Image.asset(
-              'images/image2.png',
+              'images/image3.png',
+            ),
+            const SizedBox(
+              width: 300,
+            ),
+            Container(
+              child: const Text('나의 소개',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(
+              width: 70,
+            ),
+            Container(
+              child: const Text('프로젝트',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(
+              width: 70,
+            ),
+            Container(
+              child: const Text(
+                '연락처',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
               width: 200,
-            )
+            ),
+            Container(
+              child: const Text(
+                'KOR',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Container(
+              child: const Text(
+                '|',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Container(
+              child: const Text(
+                'ENG',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ),
           ],
-        ),
+        )),
         body: Container(
-          decoration:
-              const BoxDecoration(color: Color.fromRGBO(02, 02, 02, 1.0)),
+          decoration: const BoxDecoration(),
         ));
   }
 }
