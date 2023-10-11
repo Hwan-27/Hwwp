@@ -39,7 +39,7 @@ class MainPage extends State<MyMainPage> {
             elevation: 0, // 그림자 효과 제거
             backgroundColor: Colors.white,
             title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(
                   width: 50,
@@ -58,7 +58,7 @@ class MainPage extends State<MyMainPage> {
                   ),
                 ),
                 const SizedBox(
-                  width: 300,
+                  width: 450,
                 ),
                 TextButton(
                   onPressed: () {},
@@ -204,6 +204,124 @@ class MainPage extends State<MyMainPage> {
                 ),
               ],
             )),
-        body: ListView());
+        body: ListView(
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text(
+                'PORTFOLIO',
+                style: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('WebSite',
+                  style: TextStyle(fontSize: 72, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('KIM KI HWAN',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('FLUTTER',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('2023',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            ),
+            const SizedBox(
+              height: 420,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('CONTACT.',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 85),
+              child: Text('manchu13@naver.com',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            ),
+            const SizedBox(
+              height: 200,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 300),
+              child: Text(
+                '안녕하세요. 처음 뵙겠습니다,',
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 300),
+              child: Text(
+                '개발자 김기환입니다.',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 300),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start, // 가로 정렬을 왼쪽으로 설정
+                crossAxisAlignment: CrossAxisAlignment.center, // 수직 가운데 정렬
+                children: [
+                  Image.asset(
+                    'images/kihwan.jpg',
+                    width: 300,
+                    height: 300,
+                  ),
+                  const SizedBox(
+                    width: 200, // 이미지와 텍스트 사이의 간격 조절
+                  ),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Experience',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      SizedBox(
+                        height: 85,
+                      ),
+                      Text(
+                        'Education',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      SizedBox(
+                        height: 85,
+                      ),
+                      Text(
+                        'Tool',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 300,
+            )
+          ],
+        ));
   }
 }
