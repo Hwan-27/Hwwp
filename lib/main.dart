@@ -290,12 +290,12 @@ class MainPage extends State<MyMainPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Experience',
+                        'Experience \n * 2023   캐드정보기술 \n * 2022 - 2023 리안 \n * 2019 - 2021 청운하이테크  ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       SizedBox(
-                        height: 85,
+                        height: 20,
                       ),
                       Text(
                         'Education',
