@@ -32,6 +32,18 @@ class MainPage extends State<MyMainPage> {
     setState(() {});
   }
 
+  ScrollController scrollController =
+      ScrollController(); // ScrollController 초기화
+
+  void ScrollIntroduction() {
+    const targetOffset = 900.0; // 이동하고자 하는 위치의 Y 좌표
+    scrollController.animateTo(
+      targetOffset,
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +73,9 @@ class MainPage extends State<MyMainPage> {
                   width: 450,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ScrollIntroduction();
+                  },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
@@ -205,6 +219,7 @@ class MainPage extends State<MyMainPage> {
               ],
             )),
         body: ListView(
+          controller: scrollController,
           children: [
             const SizedBox(
               height: 30,
@@ -290,28 +305,25 @@ class MainPage extends State<MyMainPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Experience \n * 2023   캐드정보기술 \n * 2022 - 2023 리안 \n * 2019 - 2021 청운하이테크  ',
+                        'Experience \n * 2023 캐드정보기술(MES) \n * 2022 - 2023 리안(AI) \n * 2019 - 2021 청운하이테크(Production)  ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Text(
-                        'Education',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 85,
-                      ),
-                      Text(
-                        'Tool',
+                        'Education \n * NCS기반 데이터 융합 자바(JAVA),코틀린(Kotlin) 웹&앱 개발자 양성과정 A',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       SizedBox(
                         height: 50,
+                      ),
+                      Text(
+                        'Tool \n * Flutter',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                     ],
                   ),
@@ -319,7 +331,7 @@ class MainPage extends State<MyMainPage> {
               ),
             ),
             const SizedBox(
-              height: 300,
+              height: 1000,
             )
           ],
         ));
