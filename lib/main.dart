@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hwwp/email.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GetMaterialApp(
+    title: 'My GetX App',
+    home: MyApp(),
+  ));
 }
 
 ScrollController scrollController = ScrollController();
@@ -39,7 +43,7 @@ class MainPage extends State<MyMainPage> {
     const targetOffset = 900.0; // 이동하고자 하는 위치의 Y 좌표
     scrollController.animateTo(
       targetOffset,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 700),
       curve: Curves.easeInOut,
     );
   }
@@ -130,7 +134,9 @@ class MainPage extends State<MyMainPage> {
                   width: 70,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const emailsend());
+                  },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
