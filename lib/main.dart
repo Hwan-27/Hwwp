@@ -135,7 +135,78 @@ class MainPage extends State<MyMainPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.to(const emailsend());
+                    //Get.to(const emailsend()); 기존에 page 전환
+                    Get.dialog(Dialog(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0)),
+                        width: 500,
+                        height: 500,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Text(
+                              '받는사람',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10)),
+                              height: 30,
+                              width: 400,
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 20),
+                                    border: OutlineInputBorder(),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.blueAccent,
+                                            width: 0.5))),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            const Text('내용',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold)),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10)),
+                              width: 400,
+                              child: const TextField(
+                                maxLines: null,
+                                maxLength: 300,
+                                decoration: InputDecoration(
+                                    hintText: '내용을 입력해주세요.',
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 20),
+                                    border: OutlineInputBorder(),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.blueAccent,
+                                            width: 0.5))),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            TextButton(
+                                onPressed: () {}, child: const Text('보내기'))
+                          ],
+                        ),
+                      ),
+                    ));
                   },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
