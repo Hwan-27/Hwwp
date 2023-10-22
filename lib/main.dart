@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 import 'package:hwwp/email.dart';
 
 void main() {
@@ -46,6 +47,35 @@ class MainPage extends State<MyMainPage> {
       duration: const Duration(milliseconds: 700),
       curve: Curves.easeInOut,
     );
+  }
+
+  Future sendEmail({
+    required String name,
+    required String email,
+    required String subject,
+    required String message,
+  }) async {
+    final serviceId = 'service_39u9yih';
+    final templateId = 'template_xtvibsd';
+    final userId = 'y5gAZ5birR0glGhZ3';
+
+    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+
+    final response = await http.post(url, headers: {
+      'Content-Type': 'application/json'
+    }, body: {
+      'service_id': serviceId,
+      'template_id': templateId,
+      'user_id': userId,
+      'template_params': {
+        'user_name': name,
+        'user_email': email,
+        'user_subject': subject,
+        'user_message': message,
+      }
+    });
+
+    print(response.body);
   }
 
   @override
@@ -202,7 +232,16 @@ class MainPage extends State<MyMainPage> {
                               height: 30,
                             ),
                             TextButton(
-                                onPressed: () {}, child: const Text('보내기'))
+                              onPressed: () async {
+                                await sendEmail(
+                                  name: '이름을 여기에 넣으세요',
+                                  email: '이메일을 여기에 넣으세요',
+                                  subject: '제목을 여기에 넣으세요',
+                                  message: '메시지를 여기에 넣으세요',
+                                );
+                              },
+                              child: const Text('보내기'),
+                            )
                           ],
                         ),
                       ),
